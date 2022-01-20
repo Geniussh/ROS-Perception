@@ -1,0 +1,12 @@
+<launch>
+  
+
+  <!-- Flying -->
+  <node pkg="unit3_exercises" type="flying_drone3_2.py" name="flying_drone3_2"  output="screen">
+  </node>
+  <!-- people_tracking -->
+  <node pkg="unit3_exercises" type="exercise3_7.py" name="people"  output="screen">
+  </node>
+
+
+</launch>

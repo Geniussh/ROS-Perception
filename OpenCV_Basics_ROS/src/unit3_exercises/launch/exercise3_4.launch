@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="unit3_exercises" type="exercise3_4.py" name="face_detect"  output="screen">
+    </node>
+
+    <node pkg="unit3_exercises" type="flying_drone3.py" name="fly_drone"  output="screen">
+    </node>
+</launch>
