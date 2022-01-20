@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <include file="$(find rosbot_gazebo)/launch/start_world_maze.launch">
+        <arg name="put_robot_in_world" value="true" />
+        <arg name="put_robot_in_world_package" value="rosbot_gazebo" />
+        <arg name="put_robot_in_world_launch" value="put_robot_in_world.launch" />
+    </include>
+</launch>

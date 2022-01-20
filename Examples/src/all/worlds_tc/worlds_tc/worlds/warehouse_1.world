@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.6">
+  <world name="default">
+
+    <!-- Moon Gravity-->
+    <gravity>0 0 -9.81</gravity>
+
+
+    <include>
+      <uri>model://sun</uri>
+      <range>1000.0</range>
+    </include>
+
+
+    <include>
+      <uri>model://warehouse_1</uri>
+      <pose>0 0 0 0 0 0</pose>
+      <range>1000.0</range>
+    </include>
+
+
+    <include>
+      <uri>model://conveyor_belt</uri>
+      <pose>-4.384904 -3.144080 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://visual_conveyor_belt</uri>
+      <pose>-4.384904 -3.144080 0 0 0 0</pose>
+    </include>
+
+
+    <include>
+      <uri>model://workcell_bin_1</uri>
+      <name>workcell_bin_0</name>
+      <pose>-5.076478 -3.130400 0 0 0 0</pose>
+      <range>1000.0</range>
+    </include>
+
+    <include>
+      <uri>model://workcell_bin_1</uri>
+      <name>workcell_bin_1</name>
+      <pose>5.49143 -3.130404 0 0 0 0</pose>
+      <range>1000.0</range>
+    </include>
+
+
+
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>35.652832</latitude_deg>
+      <longitude_deg>139.839478</longitude_deg>
+      <elevation>0.0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+
+    <!-- TESTING -->
+
+    <population name="donut_frost_1_population">
+      <model name="populate_conveyor|donut_frost_1">
+        <include>
+          <uri>model://donut_frost_1</uri>
+        </include>
+      </model>
+      <pose>-5.076478 -3.130400 0.3 0 0 0</pose>
+      <distribution>
+        <type>grid</type>
+        <rows>3</rows>
+        <cols>3</cols>
+        <step>0.2 0.2 0</step>
+      </distribution>
+    </population>
+
+    <!-- Populate the conveyor belt -->
+
+    <plugin filename="libROSPopulationPlugin.so" name="populate_conveyor">
+      <activation_topic>/conveyor/populate_belt</activation_topic>
+      <rate_modifier_topic>/conveyor/population/rate_modifier</rate_modifier_topic>
+      <control_topic>/conveyor/population/control</control_topic>
+      <state_topic>/conveyor/population/state</state_topic>
+      <loop_forever>true</loop_forever>
+      <frame>conveyor_belt::conveyor_belt_fixed</frame>
+      <object_sequence>
+        <object>
+          <time>0.0</time>
+          <type>donut_frost_1</type>
+          <pose>0 0 1.0 0 0 0</pose>
+        </object>
+        <object>
+          <time>5.0</time>
+          <type>donut_frost_1</type>
+          <pose>0 0 1.0 0 0 0</pose>
+        </object>
+        <object>
+          <time>10.0</time>
+          <type>donut_frost_1</type>
+          <pose>0 0 1.0 0 0 0</pose>
+        </object>
+        <object>
+          <time>15.0</time>
+          <type>donut_frost_1</type>
+          <pose>0 0 1.0 0 0 0</pose>
+        </object>
+        <object>
+          <time>20.0</time>
+          <type>donut_frost_1</type>
+          <pose>0 0 1.0 0 0 0</pose>
+        </object>
+        <object>
+          <time>25.0</time>
+          <type>donut_frost_1</type>
+          <pose>0 0 1.0 0 0 0</pose>
+        </object>
+        <object>
+          <time>30.0</time>
+          <type>donut_frost_1</type>
+          <pose>0 0 1.0 0 0 0</pose>
+        </object>
+        <object>
+          <time>35.0</time>
+          <type>donut_frost_1</type>
+          <pose>0 0 1.0 0 0 0</pose>
+        </object>
+        <object>
+          <time>40.0</time>
+          <type>donut_frost_1</type>
+          <pose>0 0 1.0 0 0 0</pose>
+        </object>
+      </object_sequence>
+      <update_rate>10</update_rate>
+    </plugin>
+
+
+    <light name='user_point_light_0' type='point'>
+      <pose frame=''>5.3 -3.3 4.0 0 0 0</pose>
+      <diffuse>0.2 0.2 0.2 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>10</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <light name='user_point_light_1' type='point'>
+      <pose frame=''>2.0 -3.3 4.0 0 0 0</pose>
+      <diffuse>0.2 0.2 0.2 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>10</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <light name='user_point_light_2' type='point'>
+      <pose frame=''>-2.0 -3.3 4.0 0 0 0</pose>
+      <diffuse>0.2 0.2 0.2 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>10</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+
+
+    <light name='user_point_light_3' type='point'>
+      <pose frame=''>-5.3 -3.3 4.0 0 -0 0</pose>
+      <diffuse>0.2 0.2 0.2 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>10.0</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+
+
+    <light name='user_point_light_4' type='point'>
+      <pose frame=''>5.3 3.3 4.0 0 0 0</pose>
+      <diffuse>0.2 0.2 0.2 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>10.0</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <light name='user_point_light_5' type='point'>
+      <pose frame=''>2.0 3.3 4.0 0 0 0</pose>
+      <diffuse>0.2 0.2 0.2 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>10</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <light name='user_point_light_6' type='point'>
+      <pose frame=''>-2.0 3.3 4.0 0 0 0</pose>
+      <diffuse>0.2 0.2 0.2 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>10</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+
+
+    <light name='user_point_light_7' type='point'>
+      <pose frame=''>-5.3 3.3 4.0 0 -0 0</pose>
+      <diffuse>0.2 0.2 0.2 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>10</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+
+  </world>
+</sdf>

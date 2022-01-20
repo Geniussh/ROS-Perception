@@ -1,0 +1,13 @@
+<launch>
+  
+
+  
+  <!-- people_tracking -->
+  <node pkg="project" type="people.py" name="people"  output="screen">
+  </node>
+  
+
+
+
+
+</launch>

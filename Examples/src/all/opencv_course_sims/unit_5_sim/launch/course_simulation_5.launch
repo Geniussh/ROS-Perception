@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="debug" default="false"/>
+  <arg name="gui" default="false"/>
+  <arg name="pause" default="false"/>
+  <arg name="headless" default="false"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!--<arg name="world_name" value="$(find unit_5_sim)/worlds/drc_import_1.world"/>-->
+    <arg name="world_name" default="$(find unit_5_sim)/worlds/model.world"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg pause)"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="headless" value="$(arg headless)"/>
+   
+  </include>
+
+  <!-- <include file="$(find unit_5_sim)/launch/spawn_wall1.launch"/> -->
+    
+  
+  <include file="$(find rosbot_description)/launch/rosbot_gazebo.launch" />
+    
+    
+
+
+
+
+</launch>

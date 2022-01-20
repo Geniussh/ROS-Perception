@@ -1,0 +1,10 @@
+<launch>
+  <!-- simulation -->
+  <include file="$(find worlds_tc)/launch/low_poly_forest_opencv.launch" />
+
+  <!-- robot -->
+  <include file="$(find tc_worlds_robots)/launch/spawn_hector.launch" />
+  <!-- Flying -->
+  <node pkg="unit_2_sim" type="flying_drone.py" name="flying_drone"  output="screen">
+    </node>
+</launch>

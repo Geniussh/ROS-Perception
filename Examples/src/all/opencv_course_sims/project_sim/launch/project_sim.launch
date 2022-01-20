@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="debug" default="false"/>
+  <arg name="gui" default="false"/>
+  <arg name="pause" default="false"/>
+  <arg name="headless" default="false"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find project_sim)/worlds/drc_import_2.world"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg pause)"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="headless" value="$(arg headless)"/>
+   
+  </include>
+
+  <include file="$(find unit_5_sim)/launch/spawn_wall1.launch"/> 
+    
+  
+  <include file="$(find rosbot_description)/launch/rosbot_gazebo.launch">
+    <arg name="x" default="0.5" />
+    <arg name="y" default="-0.41" />
+    <arg name="z" default="0.2" />
+    <arg name="roll" default="0.0"/>
+    <arg name="pitch" default="0.0"/>
+    <arg name="yaw" default="0.0"/>
+  </include>
+ 
+
+  <!-- <include file="$(find tc_worlds_robots)/launch/spawn_bb8.launch" /> -->
+
+    <!-- Person 1 -->  
+
+
+   <include file="$(find person_sim)/launch/spawn_standing_person5.launch">
+    <arg name="x" value="4.0"/>
+    <arg name="y" value="1.0"/>
+    <arg name="z" value="0.01"/>
+    <arg name="yaw" value="3.14" />
+   </include>
+    
+   <!-- Person 2 -->  
+
+
+   <include file="$(find person_sim)/launch/spawn_standing_person2.launch">
+    <arg name="x" value="6.0"/>
+    <arg name="y" value="-1.0"/>
+    <arg name="z" value="0.01"/>
+    <arg name="yaw" value="3.14" />
+   </include>
+   <!-- Person 3 -->  
+
+
+   <include file="$(find person_sim)/launch/spawn_standing_person3.launch">
+    <arg name="x" value="6.0"/>
+    <arg name="y" value="4.0"/>
+    <arg name="z" value="0.01"/>
+    <arg name="yaw" value="3.14" />
+   </include>
+   <!-- Person 4 -->  
+
+
+   <include file="$(find person_sim)/launch/spawn_standing_person4.launch">
+    <arg name="x" value="6.0"/>
+    <arg name="y" value="-2.0"/>
+    <arg name="z" value="0.01"/>
+    <arg name="yaw" value="3.14" />
+   </include>
+   
+   <!-- Person 5 -->  
+
+
+   <include file="$(find person_sim)/launch/spawn_standing_person.launch">
+    <arg name="x" value="5.0"/>
+    <arg name="y" value="3.0"/>
+    <arg name="z" value="0.01"/>
+    <arg name="yaw" value="3.14" />
+   </include>
+
+
+</launch>

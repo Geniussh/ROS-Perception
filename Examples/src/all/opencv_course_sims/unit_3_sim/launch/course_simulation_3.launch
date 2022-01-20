@@ -1,0 +1,28 @@
+<launch>
+  <!-- simulation   -->
+  <include file="$(find worlds_tc)/launch/low_poly_forest_opencv.launch" />
+
+  <!-- robot -->
+  <include file="$(find tc_worlds_robots)/launch/spawn_hector.launch" >
+    
+    
+  </include>
+    
+    <!-- Person -->
+
+   <include file="$(find person_sim)/launch/init_standing_person.launch">
+    <arg name="x" value="1.9"/>
+    <arg name="y" value="0.0"/>
+    <arg name="z" value="0.0"/>
+    <arg name="yaw" value="3.0" />
+  </include>
+
+  <!-- Flying 
+  <node pkg="unit_3_sim" type="flying_drone_3.py" name="flying_drone3"  output="screen">
+  </node>
+  -->
+
+
+
+
+</launch>

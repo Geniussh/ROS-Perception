@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <include file="$(find unit_5_sim)/launch/spawn.launch">
+        <arg name="x" value="2.0" />
+        <arg name="y" value="0.0" />
+        <arg name="z" value="1" />
+        <arg
+        name="urdf_robot_file"
+        value="$(find unit_5_sim)/urdf/artag1.urdf"
+        />
+        <arg name="robot_name" value="artag1" />
+    </include>
+</launch>
