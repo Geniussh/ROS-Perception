@@ -1,0 +1,2 @@
+<Attribute Name="MyHistColorAttribute" Type="HistColor" Histogram="/home/user/catkin_ws/src/perception_course_solutions/perception_unit3_solutions/my_object_recognition_pkg/config/object_base_example/histograms/PortalGun.yaml"/>
+<Attribute Name="MySizeAttribute" Type="Size" MinAreaPc="0.00" MaxAreaPc="100"/>

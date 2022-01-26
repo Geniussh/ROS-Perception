@@ -1,0 +1,8 @@
+prefix=/home/user/catkin_ws/install
+
+Name: my_blob_tracking_pkg
+Description: Description of my_blob_tracking_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
