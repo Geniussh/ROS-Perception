@@ -1,0 +1,21 @@
+# ['sift', 'rootsift', 'tf']
+detector_type: tf
+# path to TensorFlow Object Detection API frozen inference graph
+model_dir: /home/simulations/public_sim_ws/src/all/tf_models/efficientdet_d0_coco17_tpu-32/saved_model
+
+# path to TensorFlow Object Detection API label map
+label_map: /home/simulations/public_sim_ws/src/all/perception_object_detection/dodo_detector_ros/src/object_detection/data/mscoco_label_map.pbtxt
+
+
+# confidence level to report objects as detected
+tf_confidence: 0.5
+
+# minimum number of points to consider an object as present in the scene
+sift_min_pts: 10
+
+# path to the database used by the keypoint object detector
+sift_database_path: ~/.dodo_detector_ros/sift_database
+
+# the frame or tf that all object tfs will be published in relation to, leave blank to publish wrt. camera_link
+#global_frame: camera_rgb_optical_frame
+global_frame: camera_rgb_frame
