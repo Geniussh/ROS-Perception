@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+
+<AttributeLib>
+    
+    <Attribute Name="HSVColorBlackGun" Type="HSVColor" Hmin="0" Hmax="0" Smin="0" Smax="0" Vmin="31" Vmax="161"/>
+    
+    <Attribute Name="HistColorPortalGun" Type="HistColor" Histogram="histograms/PortalGun.yaml"/>
+
+    <Attribute Name="HaarGun" Type="HaarCascade" Cascade="gun_haar/classifier/cascade.xml"/>
+
+    <Attribute Name="NormalObjectBlobAttribute" Type="Blob" minThreshold="61" maxThreshold="76" blobColor="0" minArea="269" minCircularity="0.08" minConvexity="0.41" minInertiaRatio="0"/>
+    <Attribute Name="MyBlobAttribute" Type="Blob" minThreshold="54" maxThreshold="125" blobColor="0" minArea="1500" minCircularity="0.03" minConvexity="0.64" minInertiaRatio="0.00"/>
+
+    <Attribute Name="NotFractal" Type="Size" MinAreaPc="0.5" MaxAreaPc="100"/>
+         
+    <Attribute Name="Square" Type="Dimension" minRatio="0.9" maxRatio="1.1"/>
+    
+    <Attribute Name="BasicMotion" Type="BasicMotion">
+        <Clusterization Type="FOREL" R="50" eps="15"/>
+    </Attribute>    
+    
+    <Attribute Name="COCO_Dnn" Type="Dnn" framework="tensorflow" weights="ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb" config="ssd_mobilenet_v1_coco_2017_11_17/config.pbtxt" labels="ssd_mobilenet_v1_coco_2017_11_17/mscoco_label_map.pbtxt" inputWidth="300" inputHeight="300" Probability="0.75" obj_id="-1" forceCuda="1"/>
+    
+    <Attribute Name="CupDnn" Type="Dnn" framework="tensorflow" weights="ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb" config="ssd_mobilenet_v1_coco_2017_11_17/config.pbtxt" labels="ssd_mobilenet_v1_coco_2017_11_17/mscoco_label_map.pbtxt" inputWidth="300" inputHeight="300" Probability="0.75" obj_id="47"/>    
+    
+    <Attribute Name="CnnUnfiltered" Type="Dnn" framework="tensorflow" weights="ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb" config="ssd_mobilenet_v1_coco_2017_11_17/config.pbtxt" labels="ssd_mobilenet_v1_coco_2017_11_17/mscoco_label_map.pbtxt" inputWidth="300" inputHeight="300" Probability="0.3" obj_id="-1"/>    
+
+    <Attribute Name="CnnFiltered" Type="Dnn" framework="tensorflow" weights="ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb" config="ssd_mobilenet_v1_coco_2017_11_17/config.pbtxt" labels="ssd_mobilenet_v1_coco_2017_11_17/mscoco_label_map.pbtxt" inputWidth="300" inputHeight="300" Probability="0.3" obj_id="-1">    
+        <Filter Type="NMS" threshold="0.5"/>
+    </Attribute>
+    
+      <Attribute Name="DepthKinect" Type="Depth" depthScale="0.9"/>
+    
+  
+</AttributeLib>
+
+<SimpleObjectBase>  
+      
+    <SimpleObject Name="PortalGun" ID="1">              
+        <Attribute Type="Detect">HistColorPortalGun</Attribute>  
+        <Attribute Type="Check">NotFractal</Attribute>          
+    </SimpleObject>    
+
+    <SimpleObject Name="BlackGun" ID="2">              
+        <Attribute Type="Detect">HSVColorBlackGun</Attribute> 
+        <Attribute Type="Check">NotFractal</Attribute>
+    </SimpleObject>
+
+    <SimpleObject Name="HaarBlackGun" ID="3" Mode="Hard" MergingPolicy="Union">              
+        <Attribute Type="Detect">HaarGun</Attribute>
+        <Attribute Type="Detect">MyBlobAttribute</Attribute> 
+    </SimpleObject>  
+
+    <SimpleObject Name="ObjectBlob" ID="4">
+        <Attribute Type="Detect">NormalObjectBlobAttribute</Attribute>       
+    </SimpleObject> 
+    
+    <SimpleObject Name="RedCup" ID="61" Mode="Hard" MergingPolicy="Union">           
+        <Attribute Type="Detect">HistDarkRed</Attribute>                    
+        <Attribute Type="Check">NotFractal</Attribute>
+        <Attribute Type="Detect">CupDnn</Attribute>        
+    </SimpleObject>
+    
+     <SimpleObject Name="COCO_dnn_object_depth" ID="64">              
+        <Attribute Type="Detect">COCO_Dnn</Attribute>
+        <Attribute Type="Extract" Channel="DEPTH">DepthKinect</Attribute>                  
+    </SimpleObject>
+    
+    <SimpleObject Name="CnnUnfiltered" ID="65" Probability="0.3">              
+        <Attribute Type="Detect">CnnUnfiltered</Attribute>        
+    </SimpleObject>
+    
+    <SimpleObject Name="CnnFiltered" ID="66" Probability="0.3">              
+        <Attribute Type="Detect">CnnFiltered</Attribute>        
+    </SimpleObject>
+    
+     
+    
+</SimpleObjectBase>
+
+
+<RelationLib>    
+
+    
+    
+</RelationLib>
+
+
+<ComplexObjectBase>
+    
+    
+</ComplexObjectBase>
