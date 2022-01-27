@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    
+    <arg name="machine" value="localhost" />
+    <arg name="user" value="" />
+    <arg name="load_params_from_file" value="true" />
+    <arg name="gp_queue_size" value="5" />
+    <arg name="camera_namespace" value="/head_camera" />
+    <arg name="depth_image" value="/depth_registered/image_raw" />
+    <arg name="camera_info_rgb" value="/rgb/camera_info" />
+    <arg name="ground_plane" value="/ground_plane" />
+    
+    <!--
+    /head_camera/rgb/camera_info
+    /head_camera/depth_registered/image_raw
+    -->
+    
+    <!-- Ground Plane -->
+    <include file="$(find ground_plane_estimation)/launch/ground_plane_estimated.launch">
+        <arg name="machine" value="$(arg machine)"/>
+        <arg name="user" value="$(arg user)"/>
+        <arg name="load_params_from_file" value="$(arg load_params_from_file)"/>
+        <arg name="queue_size" value="$(arg gp_queue_size)"/>
+        <arg name="camera_namespace" value="$(arg camera_namespace)"/>
+        <arg name="depth_image" value="$(arg depth_image)"/>
+        <arg name="camera_info_rgb" value="$(arg camera_info_rgb)"/>
+        <arg name="ground_plane" value="$(arg ground_plane)"/>
+    </include>
+    
+</launch>

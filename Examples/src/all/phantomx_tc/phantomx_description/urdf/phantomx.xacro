@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<robot name="PhantomX"  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find phantomx_description)/urdf/phantomx_urdf.xacro" />
+  <xacro:include filename="$(find phantomx_description)/urdf/sensors.xacro" />
+  
+  <link name="base_link"/>
+
+  <xacro:phantomx parent="base_link">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:phantomx>
+
+  <xacro:camera parent_name="base_link" joint_origin="0.1 0.0 0.05"/>
+  
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/phantomx</robotNamespace>
+    </plugin>
+  </gazebo>
+  
+</robot>

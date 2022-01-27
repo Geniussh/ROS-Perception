@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>  
+  <include file="$(find phantomx_gazebo)/launch/phantomx_gazebo.launch">
+        <arg name="x" value="0.0" />
+        <arg name="y" value="-6.477121" />
+        <arg name="z" value="0.0" />
+        <arg name="yaw" value="0.0" />
+  </include>
+  
+    <!-- oliveeye Little girl -->
+    <include file="$(find person_sim)/launch/spawn_person.launch">
+        <arg name="sdf_robot_file" value="$(find person_sim)/models/oliveeye/model.sdf"/>
+        <arg name="robot_name" value="oliveeye" />
+        <arg name="x" value="-6.591941" />
+        <arg name="y" value="0.0" />
+        <arg name="z" value="0.0" />
+        <arg name="yaw" value="0.0" />
+    </include>
+
+    <!-- Martian Moving -->
+    <include file="$(find person_sim)/launch/spawn_person.launch">
+        <arg name="sdf_robot_file" value="$(find phantomx_gazebo)/models/martian/model.sdf"/>
+        <arg name="robot_name" value="martian" />
+        <arg name="x" value="0.0" />
+        <arg name="y" value="6.591941" />
+        <arg name="z" value="0.0" />
+        <arg name="yaw" value="0.0" />
+    </include>
+    
+    <include file="$(find face_recognition_tc)/launch/make_person_movable.launch">
+        <arg name="robot_name" value="martian" />
+    </include>
+
+    <arg name="robot_name" default="martian" />
+    <node name="$(arg robot_name)_move_in_circles"
+        pkg="spawn_robot_tools_pkg"
+        type="move_object_in_circles.py"
+        args="$(arg robot_name)"
+        output="screen"/>
+
+
+    <include file="$(find phantomx_gazebo)/launch/start_rviz.launch"/>
+
+</launch>
