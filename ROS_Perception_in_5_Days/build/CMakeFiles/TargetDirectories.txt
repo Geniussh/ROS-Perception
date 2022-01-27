@@ -35,6 +35,14 @@
 /home/user/catkin_ws/build/gtest/googletest/CMakeFiles/test.dir
 /home/user/catkin_ws/build/gtest/googletest/CMakeFiles/gtest_main.dir
 /home/user/catkin_ws/build/gtest/googletest/CMakeFiles/gtest.dir
+/home/user/catkin_ws/build/my_face_detector/CMakeFiles/install/strip.dir
+/home/user/catkin_ws/build/my_face_detector/CMakeFiles/install/local.dir
+/home/user/catkin_ws/build/my_face_detector/CMakeFiles/install.dir
+/home/user/catkin_ws/build/my_face_detector/CMakeFiles/list_install_components.dir
+/home/user/catkin_ws/build/my_face_detector/CMakeFiles/rebuild_cache.dir
+/home/user/catkin_ws/build/my_face_detector/CMakeFiles/edit_cache.dir
+/home/user/catkin_ws/build/my_face_detector/CMakeFiles/test.dir
+/home/user/catkin_ws/build/my_face_detector/CMakeFiles/_catkin_empty_exported_target.dir
 /home/user/catkin_ws/build/my_object_recognition_pkg/CMakeFiles/install/strip.dir
 /home/user/catkin_ws/build/my_object_recognition_pkg/CMakeFiles/install/local.dir
 /home/user/catkin_ws/build/my_object_recognition_pkg/CMakeFiles/install.dir
@@ -42,7 +50,6 @@
 /home/user/catkin_ws/build/my_object_recognition_pkg/CMakeFiles/rebuild_cache.dir
 /home/user/catkin_ws/build/my_object_recognition_pkg/CMakeFiles/edit_cache.dir
 /home/user/catkin_ws/build/my_object_recognition_pkg/CMakeFiles/test.dir
-/home/user/catkin_ws/build/my_object_recognition_pkg/CMakeFiles/_catkin_empty_exported_target.dir
 /home/user/catkin_ws/build/my_blob_tracking_pkg/CMakeFiles/install/strip.dir
 /home/user/catkin_ws/build/my_blob_tracking_pkg/CMakeFiles/install.dir
 /home/user/catkin_ws/build/my_blob_tracking_pkg/CMakeFiles/std_msgs_generate_messages_cpp.dir
@@ -75,6 +82,13 @@
 /home/user/catkin_ws/build/my_blob_tracking_pkg/CMakeFiles/edit_cache.dir
 /home/user/catkin_ws/build/my_blob_tracking_pkg/CMakeFiles/roscpp_generate_messages_eus.dir
 /home/user/catkin_ws/build/my_blob_tracking_pkg/CMakeFiles/rebuild_cache.dir
+/home/user/catkin_ws/build/my_face_recogniser/CMakeFiles/install/strip.dir
+/home/user/catkin_ws/build/my_face_recogniser/CMakeFiles/install/local.dir
+/home/user/catkin_ws/build/my_face_recogniser/CMakeFiles/install.dir
+/home/user/catkin_ws/build/my_face_recogniser/CMakeFiles/list_install_components.dir
+/home/user/catkin_ws/build/my_face_recogniser/CMakeFiles/rebuild_cache.dir
+/home/user/catkin_ws/build/my_face_recogniser/CMakeFiles/edit_cache.dir
+/home/user/catkin_ws/build/my_face_recogniser/CMakeFiles/test.dir
 /home/user/catkin_ws/build/my_following_line_package/CMakeFiles/install/strip.dir
 /home/user/catkin_ws/build/my_following_line_package/CMakeFiles/install/local.dir
 /home/user/catkin_ws/build/my_following_line_package/CMakeFiles/install.dir

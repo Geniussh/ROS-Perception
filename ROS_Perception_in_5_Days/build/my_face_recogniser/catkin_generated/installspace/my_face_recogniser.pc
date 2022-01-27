@@ -1,0 +1,8 @@
+prefix=/home/user/catkin_ws/install
+
+Name: my_face_recogniser
+Description: Description of my_face_recogniser
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/user/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/user/catkin_ws/build/CMakeFiles /home/user/catkin_ws/build/my_object_recognition_pkg/CMakeFiles/progress.marks
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_object_recognition_pkg/all
+	cd /home/user/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/user/catkin_ws/build/CMakeFiles /home/user/catkin_ws/build/my_face_recogniser/CMakeFiles/progress.marks
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_face_recogniser/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/catkin_ws/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_object_recognition_pkg/clean
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_face_recogniser/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,12 +154,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_object_recognition_pkg/preinstall
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_face_recogniser/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_object_recognition_pkg/preinstall
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_face_recogniser/preinstall
 .PHONY : preinstall/fast
 
 # clear depends

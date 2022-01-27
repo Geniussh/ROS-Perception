@@ -131,8 +131,10 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/user/catkin_ws/build/gtest/cmake_install.cmake")
+  include("/home/user/catkin_ws/build/my_face_detector/cmake_install.cmake")
   include("/home/user/catkin_ws/build/my_object_recognition_pkg/cmake_install.cmake")
   include("/home/user/catkin_ws/build/my_blob_tracking_pkg/cmake_install.cmake")
+  include("/home/user/catkin_ws/build/my_face_recogniser/cmake_install.cmake")
   include("/home/user/catkin_ws/build/my_following_line_package/cmake_install.cmake")
 
 endif()

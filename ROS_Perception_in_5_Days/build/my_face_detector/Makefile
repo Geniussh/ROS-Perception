@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/user/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/user/catkin_ws/build/CMakeFiles /home/user/catkin_ws/build/my_object_recognition_pkg/CMakeFiles/progress.marks
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_object_recognition_pkg/all
+	cd /home/user/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/user/catkin_ws/build/CMakeFiles /home/user/catkin_ws/build/my_face_detector/CMakeFiles/progress.marks
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_face_detector/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/catkin_ws/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_object_recognition_pkg/clean
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_face_detector/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,18 +154,33 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_object_recognition_pkg/preinstall
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_face_detector/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_object_recognition_pkg/preinstall
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_face_detector/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
 	cd /home/user/catkin_ws/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+my_face_detector/CMakeFiles/_catkin_empty_exported_target.dir/rule:
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_face_detector/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : my_face_detector/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+# Convenience name for target.
+_catkin_empty_exported_target: my_face_detector/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+.PHONY : _catkin_empty_exported_target
+
+# fast build rule for target.
+_catkin_empty_exported_target/fast:
+	cd /home/user/catkin_ws/build && $(MAKE) -f my_face_detector/CMakeFiles/_catkin_empty_exported_target.dir/build.make my_face_detector/CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
 
 # Help Target
 help:
@@ -180,6 +195,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... _catkin_empty_exported_target"
 .PHONY : help
 
 
