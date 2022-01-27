@@ -1,0 +1,17 @@
+<launch>
+
+    <!-- Start Gazebo with a blank world -->
+    <include file="$(find fetch_gazebo)/launch/main.launch">
+        <arg name="x" value="0.0" />
+        <arg name="pause" value="false"/>
+        <arg name="world_name" value="$(find fetch_manipulation_gazebo)/worlds/table_cube.world"/>
+    </include>
+
+    <!-- Start Fetch Moveit -->
+    <include file="$(find fetch_moveit_config)/launch/fetch_planning_execution.launch"/>
+
+    <!-- <node name="spawn_table" pkg="gazebo_ros" type="spawn_model" args="-file $(find fetch_manipulation_gazebo)/models/table.urdf -urdf -x 1 -model table" />
+    <node name="spawn_cube" pkg="gazebo_ros"  type="spawn_model" args="-file $(find fetch_manipulation_gazebo)/models/cube.sdf -sdf -x 1 -model cube -x 0.70 -y 0 -z 0.45" /> -->
+
+
+</launch>

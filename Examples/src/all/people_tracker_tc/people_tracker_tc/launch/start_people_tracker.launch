@@ -1,0 +1,4 @@
+<launch>
+     <!-- Start navigation -->
+    <include file="$(find people_velocity_tracker)/launch/filtered_tracked_detector.launch" />
+ </launch>

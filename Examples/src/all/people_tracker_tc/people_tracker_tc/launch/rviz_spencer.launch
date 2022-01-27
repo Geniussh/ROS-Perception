@@ -1,0 +1,5 @@
+<launch>
+    <!-- Show in Rviz   -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find people_tracker_tc)/rviz_config/tracking-single-rgbd-sensor.rviz"/>
+</launch>
+

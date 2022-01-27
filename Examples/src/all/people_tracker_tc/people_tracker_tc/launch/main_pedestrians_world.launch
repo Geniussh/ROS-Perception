@@ -1,0 +1,30 @@
+<launch>
+    <arg name="x" value="0.0" />
+    <arg name="y" value="0.0" />
+    <arg name="z" value="0.0" />
+    <arg name="yaw" value="0.0" />
+    <arg name="robot" default="fetch"/>
+
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find pedsim_gazebo_plugin)/worlds/social_contexts.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+        <arg name="verbose" value="true"/>
+    </include>   
+    <!-- Start navigation -->
+    <!-- Oh, you wanted a robot? -->
+    <include file="$(find fetch_gazebo)/launch/include/original_$(arg robot).launch.xml" >
+        <arg name="x" value="$(arg x)" />
+        <arg name="y" value="$(arg y)" />
+        <arg name="z" value="$(arg z)" />
+        <arg name="yaw" value="$(arg yaw)" />
+    </include>
+
+    <!-- Start navigation -->
+    <include file="$(find fetch_navigation)/launch/build_map.launch" />
+  
+</launch>

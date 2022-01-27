@@ -1,0 +1,3 @@
+[submodule "face_recognition_pkg"]
+	path = face_recognition_pkg
+	url = https://aezquerro@bitbucket.org/theconstructcore/face_recognition_pkg.git

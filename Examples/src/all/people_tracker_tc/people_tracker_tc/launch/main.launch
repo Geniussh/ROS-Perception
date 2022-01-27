@@ -1,0 +1,21 @@
+<launch>
+    <include file="$(find fetch_gazebo)/launch/main.launch" >
+        <arg name="pause" value="false"/>
+        <arg name="world_name" default="$(find people_tracker_tc)/worlds/people_tracking.world"/>
+        <arg name="x" value="0.0" />
+        <arg name="y" value="0.0" />
+        <arg name="z" value="0.0" />
+        <arg name="yaw" value="3.14" />
+    </include>
+    
+    
+    <!-- Launch the standing person and activate the movement if it and tf publish -->
+    <!-- <include file="$(find person_sim)/launch/init_standing_person.launch">
+        <arg name="x" default="-2.0" />
+        <arg name="yaw" default="3.14" />
+    </include> -->
+    
+    <!-- Start navigation -->
+    <include file="$(find fetch_gazebo_demo)/launch/fetch_nav.launch" />
+  
+</launch>

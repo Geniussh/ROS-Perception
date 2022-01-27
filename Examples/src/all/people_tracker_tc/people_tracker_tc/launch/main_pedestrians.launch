@@ -1,0 +1,25 @@
+<launch>
+    <arg name="x" value="0.0" />
+    <arg name="y" value="0.0" />
+    <arg name="z" value="0.0" />
+    <arg name="yaw" value="0.0" />
+    <arg name="robot" default="fetch"/>
+    <arg name="map_file" default="$(find fetch_gazebo_demo)/maps/pedestrian_world.yaml" />
+
+
+    <include file="$(find pedsim_simulator)/launch/main.launch" />    
+    <!-- Start navigation -->
+    <!-- Oh, you wanted a robot? -->
+    <include file="$(find fetch_gazebo)/launch/include/original_$(arg robot).launch.xml" >
+        <arg name="x" value="$(arg x)" />
+        <arg name="y" value="$(arg y)" />
+        <arg name="z" value="$(arg z)" />
+        <arg name="yaw" value="$(arg yaw)" />
+    </include>
+
+    <!-- Start navigation -->
+    <include file="$(find fetch_gazebo_demo)/launch/fetch_nav.launch" >
+        <arg name="map_file" value="$(arg map_file)" />
+    </include>
+  
+</launch>

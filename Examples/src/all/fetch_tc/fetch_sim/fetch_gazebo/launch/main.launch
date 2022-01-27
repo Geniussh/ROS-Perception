@@ -1,0 +1,37 @@
+<launch>
+
+    <arg name="robot" default="fetch"/>
+    <arg name="debug" default="false"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="pause" default="false"/>
+    <arg name="verbose" default="true"/>
+    <arg name="world_name" default="$(find fetch_gazebo)/worlds/empty_lightspot.world"/>
+    <arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+    <arg name="z" default="0.0" />
+    <arg name="roll" default="0"/>
+    <arg name="pitch" default="0"/>
+    <arg name="yaw" default="0.0" />
+  
+
+    <!-- Start Gazebo with a blank world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg pause)"/>
+        <arg name="verbose" value="$(arg verbose)"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="headless" value="$(arg headless)"/>
+        <arg name="world_name" value="$(arg world_name)"/>
+    </include>
+    
+    <!-- Oh, you wanted a robot? -->
+    <include file="$(find fetch_gazebo)/launch/include/original_$(arg robot).launch.xml" >
+        <arg name="x" value="$(arg x)" />
+        <arg name="y" value="$(arg y)" />
+        <arg name="z" value="$(arg z)" />
+        <arg name="yaw" value="$(arg yaw)" />
+    </include>
+
+</launch>

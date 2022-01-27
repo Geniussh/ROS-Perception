@@ -1,0 +1,40 @@
+<sdf version="1.5">
+
+<world name="default">
+
+  
+     <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+
+    <include>
+      <uri>model://demo_cube</uri>
+      <name>demo_cube</name>
+      <pose>0.70 0.0 0.45 0 0 0 0</pose>
+    </include>
+
+
+    <include>
+      <uri>model://demo_table</uri>
+      <name>demo_table1</name>
+      <pose>0.885 0 0.15 0 0 0 0</pose>
+    </include>
+
+
+    <light name='user_point_light_0' type='point'>
+      <pose frame=''>0 0 1.8 0 0 0</pose>
+      <diffuse>0.7 0.7 0.7 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>10</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+
+</world>
+</sdf>

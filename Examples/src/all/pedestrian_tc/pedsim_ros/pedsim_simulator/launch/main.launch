@@ -1,0 +1,10 @@
+<launch>
+  <!-- PedSim Launch With GUI -->
+  <include file="$(find pedsim_simulator)/launch/simple_pedestrians.launch">
+    <arg name="visualize" value="false"/>
+  </include>
+
+  <!-- Start Gazebo Simulation -->
+  <include file="$(find pedsim_gazebo_plugin)/launch/social_contexts.launch"/>
+
+</launch>

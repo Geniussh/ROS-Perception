@@ -1,0 +1,62 @@
+<launch>
+    <!-- Start navigation -->
+    <!--<include file="$(find perception_people_launch)/launch/people_tracker_robot.launch" />-->
+    <!--<include file="$(find perception_people_launch)/launch/people_tracker_robot.launch" >-->
+    <include file="$(find people_tracker_tc)/launch/people_tracker_robot.launch" >
+        <arg name="load_params_from_file" value="true" />
+        
+        <arg name="gp_queue_size" value="5" />
+        <arg name="vo_queue_size" value="5" />
+        <arg name="ubd_queue_size" value="5" />
+        <arg name="pt_queue_size" value="10" />
+        
+        <arg name="camera_namespace" value="/head_camera" />
+        <arg name="rgb_image" value="/rgb/image_raw" />
+        <arg name="depth_image" value="/depth_registered/image_raw" />
+        <arg name="mono_image" value="/depth_registered/image_raw" />
+        <arg name="camera_info_rgb" value="/rgb/camera_info" />
+        <arg name="camera_info_depth" value="/depth_registered/camera_info" />
+        
+        <arg name="odom" default="/odom" />
+        <arg name="ground_plane" value="/ground_plane" />
+        
+        <arg name="upper_body_detections" value="/upper_body_detector/detections" />
+        <arg name="upper_body_bb_centres" value="/upper_body_detector/bounding_box_centres" />
+        <arg name="upper_body_markers" value="/upper_body_detector/marker_array" />
+        <arg name="upper_body_image" value="/upper_body_detector/image" />
+        <arg name="visual_odometry" value="/visual_odometry/motion_matrix" />
+        
+        <arg name="mdl_people_array" default="/mdl_people_tracker/people_array" />
+        <arg name="mdl_people_markers" default="/mdl_people_tracker/marker_array" />
+        <arg name="mdl_people_poses" default="/mdl_people_tracker/pose_array" />
+        <arg name="mdl_people_image" default="/mdl_people_tracker/image" />
+        
+        <arg name="tf_target_frame" value="" />
+    
+        <arg name="bayes_people_param_file" default="$(find bayes_people_tracker)/config/detectors.yaml" />
+        <arg name="bayes_people_positions" default="/people_tracker/positions" />
+        <arg name="bayes_people_pose" default="/people_tracker/pose" />
+        <arg name="bayes_people_pose_array" default="/people_tracker/pose_array" />
+        <arg name="bayes_people_people" default="/people_tracker/people" />
+        <arg name="bayes_people_marker" default="/people_tracker/marker_array" />
+        
+        <arg name="scan" default="/base_scan" />
+        
+        <arg name="with_mdl_tracker" default="true"/>
+        <arg name="log" default="false" />
+        <arg name="manager_topic" default="" />
+        <arg name="with_laser_filter" default="true"/>
+        <arg name="with_tracker_filter_map" default="false" />
+        <arg name="tracker_filter_positions" default="/people_tracker_filter/positions" />
+        <arg name="tracker_filter_pose" default="/people_tracker_filter/pose" />
+        <arg name="tracker_filter_pose_array" default="/people_tracker_filter/pose_array" />
+        <arg name="tracker_filter_people" default="/people_tracker_filter/people" />
+        <arg name="tracker_filter_marker" default="/people_tracker_filter/marker_array" />
+        <arg name="with_wheelchair_detector" default="false"/>
+        <arg name="wheelchair_machine" default="" />
+        <arg name="wheelchair_user" default="" />
+    
+        <arg name="machine" value="localhost" />
+        <arg name="user" value="" />
+    </include>
+</launch>
