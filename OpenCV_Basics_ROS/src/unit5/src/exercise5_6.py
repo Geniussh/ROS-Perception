@@ -85,7 +85,7 @@ class LoadPolygon2(object):
                 params_2 = order_coordinates(params,True)
 
             #Her we are going to read the image we want to overlap
-            paint = cv2.imread('~/catkin_ws/src/opencv_for_robotics_images/Unit_5/Course_images/Examples/earth.jpg')
+            paint = cv2.imread('/home/user/catkin_ws/src/opencv_for_robotics_images/Unit_5/Course_images/Examples/earth.jpg')
             height, width = paint.shape[:2]
 
             #We extract the coordinates of this new image which are basically the full sized image
